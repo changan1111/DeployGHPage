@@ -1,0 +1,46 @@
+create ec2
+sudo yum update -y
+sudo yum install docker -y
+
+
+sudo service docker start
+
+
+ sudo usermod -a -G docker ec2-user
+
+[ec2-user@ip-172-31-92-24 ~]$ sudo systemctl start docker
+[ec2-user@ip-172-31-92-24 ~]$ sudo systemctl daemon-reload
+[ec2-user@ip-172-31-92-24 ~]$ sudo systemctl status docker
+
+
+After pull:
+
+Login
+Pull
+docker images
+
+
+docker cp .env ab98f5821f1c:/.env
+
+
+docker run -it 0e02c305933e sh
+/app # docker cp .env ab98f5821f1c:/.env
+sh: docker: not found
+/app #
+
+
+
+
+Remove container:
+
+docker rm <container id>
+
+Remove iamge:
+
+docker image rmi <image id>
+
+
+docker exec -u 0 -it f9ad96a0c5f1 /bin/sh
+
+
+docker exec -ti --user root f9ad96a0c5f1 /bin/bash
